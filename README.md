@@ -18,7 +18,7 @@ Bom desafio!
 
 ![Protótipo](https://storage.googleapis.com/xesque-dev/challenge-images/prototipo.png?42)
 
-A Rocketseat está criando uma loja de camisetas/canecas (pensar no texto)... O desafio será implementar um e-commerce que deverá ter as seguintes funcionalidades:
+O desafio será implementar um e-commerce para venda de canecas e camisetas que deverá ter as seguintes funcionalidades:
 - [ ] Catálogo de produtos com paginação
 - [ ] Filtragem produtos por categoria
 - [ ] Busca por nome do produto
