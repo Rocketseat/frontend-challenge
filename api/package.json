@@ -1,0 +1,13 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "json-graphql-server db.js --p 3333"
+  },
+  "dependencies": {
+    "faker": "^5.5.3",
+    "json-graphql-server": "^2.2.3"
+  }
+}
