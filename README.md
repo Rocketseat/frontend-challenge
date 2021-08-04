@@ -42,14 +42,15 @@ Chegou a hora de colocar a mão na massa!
 Além dos requisitos levantados acima, iremos olhar para os seguintes critérios durante a correção do desafio:
 
 - Gerenciamento de estado
+- Componentização
 - Responsividade
 - Preocupação com usabilidade
 - Preocupação com acessibilidade
 - Testes e2e
+- Padrões de código
 - Padrão de commits (_Conventional_)
 
 ## 😎 Seria legal
-- Fazer deploy na vercel ou em outro local de sua preferência e disponibilizar um link de visualização, se necessário utilize esse servidor para a API GraphQL:  https://rocketseat-frontend-challenge.herokuapp.com/
 - Testes unitários
 - Utilização de cache do Next.js
 
