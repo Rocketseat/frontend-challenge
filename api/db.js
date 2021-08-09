@@ -21,7 +21,9 @@ const allProducts = new Array(TOTAL_PAGES).fill(1).reduce((acc) => {
   const products = baseProducts.map(product => ({
     ...product, 
     id: faker.datatype.uuid(),
-    price: faker.commerce.price(20, 100)
+    price: faker.commerce.price(20, 100),
+    sales: faker.datatype.number(40),
+    created_at: faker.date.past()
   })).sort(() => .5 - Math.random());
 
   return [...acc, ...products]
