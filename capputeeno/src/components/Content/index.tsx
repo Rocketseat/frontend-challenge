@@ -1,9 +1,13 @@
 
 
-import { Tab } from "../Tab"
-import { AllProducts } from "./AllProducts"
+import { ReactNode } from "react";
 
-export const Content = ()=>{
+import { Tab } from "../Tab"
+
+interface ContentProps {
+    children:ReactNode;
+}
+export const Content = ({children}:ContentProps)=>{
   
     return (
         <>
@@ -13,17 +17,10 @@ export const Content = ()=>{
             </div>  
         </div>
         <div>
+            {children}
                 {/* CATALOGOS */}
-              <AllProducts/>
-            </div>
-
-            <div>
-                {/* CAMISETAS */}
-            </div>
-
-            <div>
                 {/* CANECAS */}
-            </div>
-            </>
+        </div>
+        </>
     )
 }

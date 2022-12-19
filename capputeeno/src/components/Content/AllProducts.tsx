@@ -1,24 +1,25 @@
-// import { useEffect,useState } from "react"
+import {useEffect,useState} from 'react'
 
-// import { Product } from "../../@types/types"
-// import { CardItemMinInfo } from "../CardItemMinInfo";
-// import { GetServerSideProps } from "next";
+import { Product } from '../../@types/types';
+import { CardItemMinInfo } from "../CardItemMinInfo";
 
-export const AllProducts = ()=>{
-    // const [products,setProducts] = useState<Product[]>({} as Product[]);
-
-    
-
-
-    return<>
-<       div>
-         
-            <h1>Teste</h1>
-        </div>
-        </>  
+interface AllProductsProps{
+    products:object;
 }
 
+export const AllProducts = ({products}:AllProductsProps)=>{
+    const [allproducts,_setAllProducts] = useState<Product[]>(Object.values(products)[0]);
+  
+    useEffect(()=>{
+        console.log(allproducts);
+    },[])
 
+    return<>
+        <div>
+            { allproducts.map(({name,imageURl,sales},index)=> <CardItemMinInfo productPrice={`${sales}`} key={index} imageUrl={imageURl} productName={name} />)}
+        </div>
+    </>  
+}
 
 
     

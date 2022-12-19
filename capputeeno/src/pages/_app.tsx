@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { QueryClient,QueryClientProvider } from 'react-query'
 
 import 'tailwindcss/tailwind.css'
+import { ProductProvider } from '../context/ProductContext';
 
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -10,8 +11,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <QueryClientProvider client={queryClient}>
-
-      <Component {...pageProps} />
+      <ProductProvider>
+        <Component {...pageProps} />
+      </ProductProvider>
     </QueryClientProvider>
   )
 }

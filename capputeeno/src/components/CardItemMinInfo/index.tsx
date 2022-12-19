@@ -1,3 +1,7 @@
+/* eslint-disable jsx-a11y/alt-text */
+import Image from 'next/image'
+
+
 interface CardItemMinInfo {
     productName:string;
     productPrice:string;
@@ -10,7 +14,10 @@ export const CardItemMinInfo = ({productName,productPrice,imageUrl}:CardItemMinI
     <div className=" w-64  rounded bg-white">
         <div className="bg-white">
             {/* image */}
-            <img className="h-[100%] w-[256px]" src={imageUrl}/>
+            <Image src={imageUrl}
+              width={256}
+              height={100}
+              />
         </div>
         <div className="h-[4.875rem] bg-white">
             {/*Name*/}

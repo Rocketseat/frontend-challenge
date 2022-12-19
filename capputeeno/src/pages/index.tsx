@@ -7,13 +7,10 @@ import { Header } from '../components/Header'
 import { Content } from '../components/Content'
 import { Product } from '../@types/types';
 import { grapQLClient } from '../services/graphiqlClient';
+import { AllProducts } from '../components/Content/AllProducts';
 
-const Home: NextPage = (props:Product[]) => {
-  
-  useEffect(()=>{
-    console.log(props)
-    console.log("teste")
-  },[])
+const Home: NextPage = (props) => {
+ 
 
   return (
     <div  className='bg-[#F0F0F5]'>
@@ -25,7 +22,10 @@ const Home: NextPage = (props:Product[]) => {
       <Header/>
       <main className='h-screen w-4/5 m-auto py-10 '>
 
-    <Content/>
+    <Content>
+      <AllProducts products={props} />
+      
+    </Content>
 
 
       </main>
@@ -44,12 +44,17 @@ export const getServerSideProps:GetServerSideProps = async()=>{
     allProducts{
         image_url
         name
+        sales
     }
   }
   `)
+
+  const arrayProducts:Product[] = Object.values(allProducts)
+  
+
   return{
     props:{
-      allProducts
+      arrayProducts
     },
   }
 
