@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import Image from 'next/image'
-
+import {useEffect} from 'react';
 
 interface CardItemMinInfo {
     productName:string;
@@ -9,14 +9,15 @@ interface CardItemMinInfo {
 
 }
 export const CardItemMinInfo = ({productName,productPrice,imageUrl}:CardItemMinInfo)=>{
-
+    
+    
     return (
-    <div className=" w-64  rounded bg-white">
+    <div className=" w-64  rounded bg-white ">
         <div className="bg-white">
-            {/* image */}
+            
             <Image src={imageUrl}
               width={256}
-              height={100}
+              height={300}
               />
         </div>
         <div className="h-[4.875rem] bg-white">

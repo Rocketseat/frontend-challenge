@@ -1,5 +1,5 @@
 export interface Product{
-    imageURl:string;
+    image_url:string;
     name:string;
     sales:number;
 }   

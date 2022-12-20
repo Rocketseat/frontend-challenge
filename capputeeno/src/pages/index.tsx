@@ -11,34 +11,25 @@ import { AllProducts } from '../components/Content/AllProducts';
 
 const Home: NextPage = (props) => {
  
-
   return (
-    <div  className='bg-[#F0F0F5]'>
+    <div  className='bg-[#F0F0F5] '>
       <Head>
         <title>
           Capputeeno | Home
         </title>
       </Head>
       <Header/>
-      <main className='h-screen w-4/5 m-auto py-10 '>
-
-    <Content>
-      <AllProducts products={props} />
-      
-    </Content>
-
-
-      </main>
-     
-      
+      <main className=' w-4/5 mx-auto py-10'>
+        <Content>
+          <AllProducts products={props}/>
+        </Content>
+      </main>      
     </div>
   )
 }
 
 
 export const getServerSideProps:GetServerSideProps = async()=>{
-
-
   const {allProducts} = await grapQLClient.request(gql`
   query{
     allProducts{
@@ -50,8 +41,6 @@ export const getServerSideProps:GetServerSideProps = async()=>{
   `)
 
   const arrayProducts:Product[] = Object.values(allProducts)
-  
-
   return{
     props:{
       arrayProducts
