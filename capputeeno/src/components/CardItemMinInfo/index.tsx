@@ -1,15 +1,25 @@
+/* eslint-disable jsx-a11y/alt-text */
+import Box from '@mui/material/Box';
+import Image from 'next/image'
+import {useEffect} from 'react';
+
 interface CardItemMinInfo {
     productName:string;
-    productprice:string;
+    productPrice:string;
+    imageUrl:string;
 
 }
-export const CardItemMinInfo = ({productName,productprice}:CardItemMinInfo)=>{
-
+export const CardItemMinInfo = ({productName,productPrice,imageUrl}:CardItemMinInfo)=>{
+    
+    
     return (
-    <div className=" w-64  rounded bg-white">
+    <Box className="border rounded bg-white w-[256px] ">
         <div className="bg-white">
-            {/* image */}
-            <img className="h-[100%] w-[256px]" src="/images/itemTest.svg"/>
+            
+            <Image src={imageUrl}
+              width={256}
+              height={300}
+              />
         </div>
         <div className="h-[4.875rem] bg-white">
             {/*Name*/}
@@ -17,11 +27,10 @@ export const CardItemMinInfo = ({productName,productprice}:CardItemMinInfo)=>{
                 <p className="prose-base font-['Saira'] text-base leading-6	   px-3">{productName}</p>
             </div>
             <div className="w-[14.25rem] h-[1px] border border-[DCE2E5] mx-auto"/>
-            <div className="">
-                <p className="font-bold px-3">R$ {productprice}</p>
-            </div>
-            
+                <div className="">
+                    <p className="font-bold px-3">R$ {productPrice}</p>
+                </div>
 
         </div>
-    </div>)
+    </Box>)
 }
