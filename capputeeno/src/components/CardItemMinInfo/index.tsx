@@ -13,7 +13,7 @@ export const CardItemMinInfo = ({productName,productPrice,imageUrl}:CardItemMinI
     
     
     return (
-    <Box className="border rounded bg-white  ">
+    <Box className="border rounded bg-white w-[256px] ">
         <div className="bg-white">
             
             <Image src={imageUrl}
