@@ -19,7 +19,7 @@ const Home: NextPage = (props) => {
         </title>
       </Head>
       <Header/>
-      <main className=' w-4/5 mx-auto py-10'>
+      <main className=' w-[90%] m-auto py-10 overflow-auto '>
         <Content>
           <AllProducts products={props}/>
         </Content>
