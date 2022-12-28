@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import Box from '@mui/material/Box';
 import Image from 'next/image'
+import {useEffect} from 'react';
 
 interface CardItemMinInfo {
     productName:string;
@@ -12,7 +13,7 @@ export const CardItemMinInfo = ({productName,productPrice,imageUrl}:CardItemMinI
     
     
     return (
-    <Box className="border rounded bg-white w-64 ">
+    <Box className="border rounded bg-white  ">
         <div className="bg-white">
             
             <Image src={imageUrl}

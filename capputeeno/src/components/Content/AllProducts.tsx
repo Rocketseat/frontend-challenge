@@ -15,14 +15,14 @@ export const AllProducts = ({products}:AllProductsProps)=>{
         <Grid 
             container 
             spacing={2} 
-            justifyContent="center"
+            justifyContent="normal"
             columns={{xs:4,md:12}}
-           className='border border-red-800 border-1 w-full mx-auto'
-            
+           className='border-1 mx-0 p-0'
+            gap={2}
             >
               
             { allproducts.map(({name,image_url,sales},index)=>
-                <Grid item key={index} className="border border-1 border-gray-500   " >
+                <Grid item key={index} className="py-0 px-0" >
                     <CardItemMinInfo 
                         productPrice={`${sales}`} 
                         imageUrl={image_url} 
