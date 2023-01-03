@@ -24,7 +24,7 @@ export const AllProducts = ({products}:AllProductsProps)=>{
             { allproducts.map(({name,image_url,sales},index)=>
                 <Grid item key={index}  className="py-0 px-0" >
                     <CardItemMinInfo 
-                        productPrice={`${sales}`} 
+                        productPrice={`${sales},00`} 
                         imageUrl={image_url} 
                         productName={name}/>
                 
