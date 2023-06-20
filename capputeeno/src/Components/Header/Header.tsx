@@ -1,5 +1,5 @@
 "use client";
-import CardComponent from "../CardIcon/CardIcon";
+import CartComponent from "../CartIcon/CartIcon";
 import { PrimaryInputWSearchIcon } from "../PrimaryInput/PrimaryInputWSearchIcon";
 import { CartIcon } from "../icons.svg";
 import * as S from "./Header.style";
@@ -18,7 +18,7 @@ const Header = ({}: HeaderProps) => {
       <S.Logo className={sairaStencil.className}>Capputeeno</S.Logo>
       <div>
         <PrimaryInputWSearchIcon placeholder="Procurando algo específico?" />
-        <CardComponent />
+        <CartComponent />
       </div>
     </S.TagHeader>
   );
