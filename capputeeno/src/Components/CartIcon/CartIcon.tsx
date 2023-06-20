@@ -1,11 +1,11 @@
 import { useLocalStorage } from "@/hooks/useLocalStorage";
-import * as S from "./CardIcon.style";
+import * as S from "./CartIcon.style";
 import { CartIcon } from "../icons.svg";
 
-interface CardIconProps {}
+interface CartIconProps {}
 
-const CardComponent = ({}: CardIconProps) => {
-  const { value } = useLocalStorage("card-items", [1, 1, 2, 2]);
+const CartComponent = ({}: CartIconProps) => {
+  const { value } = useLocalStorage("cart-items", [1, 1, 2, 2]);
 
   return (
     <S.Container>
@@ -15,4 +15,4 @@ const CardComponent = ({}: CardIconProps) => {
   );
 };
 
-export default CardComponent;
+export default CartComponent;
