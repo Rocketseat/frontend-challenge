@@ -7,7 +7,9 @@
     "start": "json-graphql-server db.js --p 3333"
   },
   "dependencies": {
+    "axios": "^1.4.0",
     "faker": "^5.5.3",
-    "json-graphql-server": "^2.2.3"
+    "json-graphql-server": "^2.2.3",
+    "react-query": "^3.39.3"
   }
 }
