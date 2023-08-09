@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "types": ["react", "react-dom", "react-query"],
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,

@@ -1,5 +1,15 @@
 :root {
   --border-radius: 12px;
+  --logo-color: #5D5D6D;
+  --bg-secondary: #F3F5F6;
+  --bg-primary: #F0F0F5;
+  --shapes-dark: #09090A;
+  --text-dark: #737380;
+  --shapes-dark: #09090A;
+  --text-dark-2: #41414D;
+  --delete-color: #DE3838;
+  --orange-low: #FFA585;
+  --shapes: #DCE2E6;
 }
 
 * {

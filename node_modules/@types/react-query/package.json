@@ -1,0 +1,13 @@
+{
+    "name": "@types/react-query",
+    "version": "1.2.9",
+    "typings": null,
+    "description": "Stub TypeScript definitions entry for react-query, which provides its own types definitions",
+    "main": "",
+    "scripts": {},
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "react-query": "*"
+    }
+}

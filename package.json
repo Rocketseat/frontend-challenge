@@ -1,1 +1,8 @@
-{}
+{
+  "dependencies": {
+    "@types/react-query": "^1.2.9",
+    "axios": "^1.4.0",
+    "dotenv": "^16.3.1",
+    "react-query": "^3.39.3"
+  }
+}
