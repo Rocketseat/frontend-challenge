@@ -1,7 +1,12 @@
 :root {
   --max-width: 1100px;
+<<<<<<< HEAD
   
   --logo-color: #5D5D6D;
+=======
+  --border-radius: 12px;
+  
+>>>>>>> a1216ff3b66ef4e3fe7e3e6c4ecff8bb248a8cb5
 }
 
 * {
