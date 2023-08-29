@@ -1,8 +1,7 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
+  align-items: start;
+  padding: 34px 90px;
+  background: var(--shapes-light-92-gray, #F0F0F5);
 }

@@ -15,7 +15,7 @@ const TagHeader = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 160px;
+    padding: 34px 160px;
 
     > div {
         display: flex;
