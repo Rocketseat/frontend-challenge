@@ -9,6 +9,12 @@ display: flex;
 justify-content: space-between;
 align-items: flex-start;
 min-height: 20vh;
+flex-wrap: wrap;
+@media (max-width:815px) {
+  align-items: center;
+  justify-content: center;
+
+}
 `
 
 export default function HeaderHomePage() {

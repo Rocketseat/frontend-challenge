@@ -8,14 +8,14 @@ export const TagButton = styled.button`
 color: var(--textos-dark-textos-apoio, #737380);
 text-align: center;
 font-family: Saira;
-font-size: 14px;
+font-size: 0.875rem;
 font-style: normal;
 font-weight: 400;
-line-height: 22px;
+line-height: 1.375rem;
 display: flex;
 align-items: center;
 justify-content: flex-end;
-width: 176px;
+width: 11rem;
 border: none;
 cursor: pointer;
 
@@ -23,7 +23,7 @@ cursor: pointer;
 
 export const ContainerDiv = styled.div`
     display: flex;
-    gap: 10px;
+    gap: 0.625rem;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -36,18 +36,20 @@ cursor: pointer;
 `
 
 export const ContainerSelect = styled.ul`
-width: 176px;
-height: 132px;
+width: 11rem;
+height: 8.25rem;
 flex-shrink: 0;
 border-radius: 4px;
 background: var(--shapes-01, #FFF);
 box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.10);
 list-style: none;
-padding: 10px;
-gap: 5px;
+padding: 0.625rem;
+gap: 0.3125rem;
 display: flex;
 flex-direction: column;
 align-items: flex-start;
+
+
 `
 
 
@@ -62,6 +64,8 @@ export default function FilterByPriority({}:FilterByPriorityProps) {
         handleChangedIsOpen()
         setPriority(value)
     }
+
+
     return(
         <ContainerDiv>
             <TagButton

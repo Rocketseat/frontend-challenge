@@ -1,5 +1,5 @@
 "use client"
-import { FilterContextProviderProps, FilterType, PriorityType } from "@/types/filter-types";
+import { FilterContextProps, FilterContextProviderProps, FilterType, PriorityType } from "@/types/filter-types";
 import { ReactNode, createContext, useState } from "react";
 
 export const FilterContext = createContext({
@@ -11,11 +11,11 @@ export const FilterContext = createContext({
   setPage: (value: number) => {},
   setType: (value: FilterType) => {},
   setPriority: (value: PriorityType) => {},
-});
+} as FilterContextProps);
 
 
 export function FilterContextProvider({children}:FilterContextProviderProps) {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState<string>("");
   const [page, setPage] = useState(0);
   const [type, setType] = useState(FilterType.ALL);
   const [priotity, setPriority] = useState(PriorityType.NEWS);

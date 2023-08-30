@@ -8,8 +8,8 @@ import { FilterType } from "@/types/filter-types"
 const FilterList = styled.ul`
   display: flex;
   list-style: none;
-  gap: 40px;
-  padding: 0 80px;
+  gap: 2.5rem;
+  padding: 0 5rem;
 `
 
 interface FilterBarProps {}

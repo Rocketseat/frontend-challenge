@@ -13,7 +13,7 @@ const FilterItemStyled = styled.li<TFilterItemStyled>`
   font-size: 1.125rem;
   font-style: normal;
   font-weight: ${({ select }) => select ? "600" : "400"};
-  line-height: 22px; /* 137.5% */
+  line-height: 1.375rem; /* 137.5% */
   border-bottom: 4px solid ${({ select }) => select ? "#FFA585" : "transparent"};
   color: "#737380";
   text-transform: uppercase;
