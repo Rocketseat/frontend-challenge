@@ -75,7 +75,7 @@ font-family: Saira;
 font-size: 1.25rem;
 font-style: normal;
 font-weight: 600;
-line-height: 150%; /* 30px */
+line-height: 150%;
 `
 export default function Product({ searchParams }: { searchParams: { id: string }}) {
     const { data } = useProduct(searchParams.id);
