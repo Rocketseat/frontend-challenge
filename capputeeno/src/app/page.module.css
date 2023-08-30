@@ -1,0 +1,7 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 34px 90px;
+  background: var(--shapes-light-92-gray, #F0F0F5);
+}
