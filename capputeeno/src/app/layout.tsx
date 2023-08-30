@@ -1,8 +1,13 @@
-import './globals.css'
+import StyledComponentsRegistry from '@/lib/registry'
+import { DefaultProvider } from '@/utils/default-provider'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Saira_Stencil_One } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const saira = Saira_Stencil_One({
+  weight: ['400'],
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +21,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <DefaultProvider>
+        <body className={saira.className}>
+            {children}
+        </body>
+      </DefaultProvider>
     </html>
   )
 }
