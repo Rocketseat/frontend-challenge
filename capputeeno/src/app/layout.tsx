@@ -1,4 +1,5 @@
-import './globals.css'
+import StyledComponentsRegistry from '@/lib/registry'
+import { DefaultProvider } from '@/utils/default-provider'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
@@ -16,7 +17,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <DefaultProvider>
+        <body className={inter.className}>
+            {children}
+        </body>
+      </DefaultProvider>
     </html>
   )
 }
