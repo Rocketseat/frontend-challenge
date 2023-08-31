@@ -1,3 +1,4 @@
+import Header from '@/components/header'
 import StyledComponentsRegistry from '@/lib/registry'
 import { DefaultProvider } from '@/utils/default-provider'
 import type { Metadata } from 'next'
@@ -23,6 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <DefaultProvider>
         <body className={saira.className}>
+            <Header/>
             {children}
         </body>
       </DefaultProvider>

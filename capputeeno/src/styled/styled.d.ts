@@ -13,12 +13,15 @@ declare module 'styled-components' {
       basePrice:string
       baseTitle:string
       borderFilter:string
-      fontSize:{
-        xs: string
-        sm: string
-        md: string 
-        lg: string
-      }
+      shapes:string
+      red:string
+      orangeFlow:strng
     };
+    fontSize:{
+      xs: string
+      sm: string
+      md: string 
+      lg: string
+    }
   }
 }

@@ -12,14 +12,17 @@ const myTheme: DefaultTheme = {
     basePrice:"#09090A",
     baseTitle:"#5D5D6D",
     borderFilter:"#FFA585",
-    fontSize:{
-        xs: '14px',
-        sm: '16px',
-        md: '32px',
-        lg: '40px',
-      }
-
+    shapes:"#FFF",
+    red:"#DE3838",
+    orangeFlow:"#FFA585"
+    
   },
+  fontSize:{
+      xs: '14px',
+      sm: '16px',
+      md: '32px',
+      lg: '40px',
+    }
 };
 
 interface Theme {

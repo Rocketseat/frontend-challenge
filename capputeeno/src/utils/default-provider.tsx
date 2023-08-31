@@ -1,4 +1,5 @@
 "use client"
+import FilterContextProvider from "@/context/filter-context"
 import StyledComponentsRegistry from "@/lib/registry"
 import Theme from "@/styled/DefaultTheme"
 import { GlobalStyle} from "@/styled/global-styled"
@@ -10,11 +11,13 @@ interface DefaultProviderProps{
 
 export function DefaultProvider({children}:DefaultProviderProps) {
     return(
-      <StyledComponentsRegistry>
-        <Theme>
-            <GlobalStyle/>
-            {children}
-        </Theme>
-      </StyledComponentsRegistry>
+      <FilterContextProvider>
+        <StyledComponentsRegistry>
+          <Theme>
+              <GlobalStyle/>
+              {children}
+          </Theme>
+        </StyledComponentsRegistry>
+      </FilterContextProvider>
     )
 }
