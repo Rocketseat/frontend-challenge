@@ -1,3 +1,5 @@
+import { sortField, sortOrder } from '@/context/filter-context';
+import useFilters from '@/hooks/useFilters';
 import { ArrowDown } from '@phosphor-icons/react';
 import React, { useState } from 'react';
 import styled from 'styled-components';
@@ -72,10 +74,17 @@ cursor: pointer;
 
 export default function Dropdown() {
     const [isOpen, setIsOpen] = useState(false);
+    const {setSortFieldState,sortFieldState} = useFilters()
     
     const toggleDropdown = () => {
       setIsOpen(!isOpen);
     };
+    const handleSortFieldState = (sortField:sortField,sortOrder:sortOrder) =>{
+        setSortFieldState({
+            sortField,
+            sortOrder
+        })
+    }
      return (
     <DropdownContainer>
       <DropdownButton onClick={toggleDropdown}>
@@ -85,10 +94,18 @@ export default function Dropdown() {
       <DropdownList open={isOpen}
       onClick={toggleDropdown}
       >
-        <DropdownItem>Novidades</DropdownItem>
-        <DropdownItem>Preço: Maior - menor</DropdownItem>
-        <DropdownItem>Preço: Menor - maior</DropdownItem>
-        <DropdownItem>Mais vendidos</DropdownItem>
+        <DropdownItem
+        onClick={()=>{handleSortFieldState(sortField.news,sortOrder.ASI)}}
+        >Novidades</DropdownItem>
+        <DropdownItem
+        onClick={()=>{handleSortFieldState(sortField.price_in_cents, sortOrder.DSC)}}
+        >Preço: Maior - menor</DropdownItem>
+        <DropdownItem
+        onClick={()=>{handleSortFieldState(sortField.price_in_cents, sortOrder.ASI)}}
+        >Preço: Menor - maior</DropdownItem>
+        <DropdownItem
+        onClick={()=>{handleSortFieldState(sortField.sales, sortOrder.ASI)}}
+        >Mais vendidos</DropdownItem>
       </DropdownList>
     </DropdownContainer>
   );
