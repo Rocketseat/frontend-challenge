@@ -12,6 +12,7 @@ export default function ProductList() {
         list-style: none;
         margin-bottom: 2.5rem;
         cursor: pointer;
+        min-height: 18.75rem;
 
     `
     const {response} = useProducts()

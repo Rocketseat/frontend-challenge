@@ -1,5 +1,6 @@
 import { useProducts } from "@/hooks/useProducts"
 import { formatPrice } from "@/utils/format-price"
+import { useRouter } from "next/navigation"
 import { styled } from "styled-components"
 
 const TagImage = styled.img`
@@ -42,8 +43,16 @@ interface ProductCardProps{
     image_url: string,
 }
 export default function ProductCard({id,image_url,name,price_in_cents}:ProductCardProps) {
+      const router = useRouter()
+      const handleNavigate = () => {
+        router.push("/product?id=" + id);
+    }
+
+
     return(
-        <ContainerCard>
+        <ContainerCard
+        onClick={handleNavigate}
+        >
             <TagImage src={image_url}/>
             <ContainerDiv>
             <TagName>{name}</TagName>

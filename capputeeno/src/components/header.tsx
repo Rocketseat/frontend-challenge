@@ -4,6 +4,7 @@ import { MagnifyingGlass, ShoppingBag } from "@phosphor-icons/react"
 import CartControl from "./cart-controll"
 import InputHeader from "./input-header"
 import useFilters from "@/hooks/useFilters"
+import { useRouter } from "next/navigation"
 
 export const BoxHeader = styled.header`
     height: 5rem;
@@ -23,12 +24,19 @@ export const TagH1 = styled.h1`
     font-weight: 400;
     line-height: 150%; 
     margin-right: auto;
+    cursor: pointer;
 `
 export default function Header(){
     const {} = useFilters()
+    const router = useRouter()
+    const handleNavigation = () =>{
+        router.push("/")
+    }
     return(
         <BoxHeader>
-            <TagH1>capputeeno</TagH1>
+            <TagH1
+            onClick={handleNavigation}
+            >capputeeno</TagH1>
             <InputHeader/>
             <CartControl/>
         </BoxHeader>

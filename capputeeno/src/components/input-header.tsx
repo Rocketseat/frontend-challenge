@@ -1,3 +1,4 @@
+import useFilters from "@/hooks/useFilters"
 import { MagnifyingGlass } from "@phosphor-icons/react"
 import { styled } from "styled-components"
 
@@ -36,11 +37,13 @@ export const Button = styled.button`
 `
 
 export default function InputHeader() {
+    const {setSearch} = useFilters()
     return (
          <ContainerInput>
                 <Input 
                 type="text" 
                 placeholder="Procurando por algo específico?"
+                onChange={(e)=>{setSearch(e.target.value)}}
                 />
                 <Button>
                     <MagnifyingGlass size={20}/>
