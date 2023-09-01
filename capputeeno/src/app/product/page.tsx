@@ -6,6 +6,8 @@ import { formatPrice } from '@/utils/format-price'
 import { Bag } from '@phosphor-icons/react'
 import { useRouter } from 'next/navigation'
 import { styled } from 'styled-components'
+import { key } from '@/utils/key-local-storage'
+import { useCart } from '@/context/cart-context'
 
 const ContainerPage = styled.div`
   display: flex;
@@ -51,6 +53,23 @@ const TagPrice = styled.p`
   line-height: 150%; /* 30px */
 `
 
+const TagDescription = styled.p`
+  color: var(--textos-dark-inputs-icons, #41414d);
+  font-family: Saira;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 21px */
+`
+const TagH3 = styled.h3`
+  color: var(--textos-dark-textos-apoio, #737380);
+  font-family: Saira;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 24px */
+  text-transform: uppercase;
+`
 const ButtonAddCart = styled.button`
   width: 28rem;
   height: 2.75rem;
@@ -84,11 +103,8 @@ export default function Product({
 }: {
   searchParams: { id: string }
 }) {
-  const { data } = useProduct(searchParams.id)
-  if (!data) {
-    return <h1>produto nao encontrado</h1>
-  }
-
+  const { data, isLoading } = useProduct(searchParams.id)
+  const { addToCart } = useCart()
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const router = useRouter()
   const handleNavigation = () => {
@@ -105,15 +121,23 @@ export default function Product({
           <img src={data?.image_url} alt="" />
         </div>
         <TagDiv>
-          <TagCategory>{data?.category}</TagCategory>
-          <TagName>{data?.name}</TagName>
-          <TagPrice>{formatPrice(data.price_in_cents)}</TagPrice>
-          <h4>DESCRIÇÃO</h4>
-          <p>{data?.description}</p>
-          <ButtonAddCart onClick={handleNavigation}>
-            <Bag size={28} />
-            <span>adicionar carrinho</span>
-          </ButtonAddCart>
+          {!isLoading && data && (
+            <>
+              <TagCategory>{data?.category}</TagCategory>
+              <TagName>{data?.name}</TagName>
+              <TagPrice>{formatPrice(data.price_in_cents)}</TagPrice>
+              <TagH3>DESCRIÇÃO</TagH3>
+              <TagDescription>{data?.description}</TagDescription>
+              <ButtonAddCart
+                onClick={() => {
+                  addToCart(data)
+                }}
+              >
+                <Bag size={28} />
+                <span>adicionar carrinho</span>
+              </ButtonAddCart>
+            </>
+          )}
         </TagDiv>
       </ContainerInfos>
     </ContainerPage>

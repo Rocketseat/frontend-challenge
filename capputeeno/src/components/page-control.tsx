@@ -1,16 +1,16 @@
-import useFilters from "@/hooks/useFilters";
-import { ArrowLeft, ArrowRight } from "@phosphor-icons/react";
-import { styled } from "styled-components";
+import useFilters from '@/hooks/useFilters'
+import { ArrowLeft, ArrowRight } from '@phosphor-icons/react'
+import { styled } from 'styled-components'
 
 const Container = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
   gap: 0.625rem;
-`;
+`
 
 interface ButtonProps {
-  isActive?: boolean;
+  isActive?: boolean
 }
 
 const Button = styled.button<ButtonProps>`
@@ -19,36 +19,35 @@ const Button = styled.button<ButtonProps>`
   background-color: #e8e8f0;
   border-radius: 8px;
   background-color: ${({ isActive, theme }) =>
-    isActive ? "#f4f4f9" : "#e8e8f0"};
+    isActive ? '#f4f4f9' : '#e8e8f0'};
   border: 1px solid
-    ${({ isActive, theme }) =>
-      isActive ? theme.colors.orangeFlow : "#e8e8f0"};
+    ${({ isActive, theme }) => (isActive ? theme.colors.orangeFlow : '#e8e8f0')};
   cursor: pointer;
 
   span {
-    font-family: "Saira-Regular", Helvetica;
+    font-family: 'Saira-Regular', Helvetica;
     font-size: 16px;
     font-weight: 400;
     color: ${({ theme }) => theme.colors.basetext};
   }
-`;
+`
 
 export default function PageControl() {
-  const { setPage, page } = useFilters();
+  const { setPage, page } = useFilters()
 
   const handlePlus = () => {
     if (page < 5) {
-      const value = page + 1;
-      setPage(value);
+      const value = page + 1
+      setPage(value)
     }
-  };
+  }
 
   const handleMinus = () => {
     if (page > 1) {
-      const value = page - 1;
-      setPage(value);
+      const value = page - 1
+      setPage(value)
     }
-  };
+  }
 
   return (
     <Container>
@@ -64,5 +63,5 @@ export default function PageControl() {
         <ArrowRight />
       </Button>
     </Container>
-  );
+  )
 }
