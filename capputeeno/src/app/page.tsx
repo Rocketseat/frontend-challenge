@@ -2,7 +2,7 @@
 
 import Nav from '@/components/nav'
 import PageControl from '@/components/page-control'
-import ProductList from '@/components/product-list'
+import ProductList from '@/components/product/product-list'
 import { useLocalStorage } from '@/hooks/useLocalStorage'
 import { ProductInCart } from '@/types/use-product'
 import { styled } from 'styled-components'
