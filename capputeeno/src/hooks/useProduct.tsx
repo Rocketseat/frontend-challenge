@@ -1,12 +1,12 @@
-import { ProductFetchResponse } from "@/types/use-product";
-import { useQuery } from "@tanstack/react-query";
-import axios, { AxiosPromise } from "axios";
+import { ProductFetchResponse } from '@/types/use-product'
+import { useQuery } from '@tanstack/react-query'
+import axios, { AxiosPromise } from 'axios'
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL as string;
+const API_URL = process.env.NEXT_PUBLIC_API_URL as string
 
 const fetcher = (id: string): AxiosPromise<ProductFetchResponse> => {
-    console.log(id)
-  return axios.post(API_URL,{ query: `
+  return axios.post(API_URL, {
+    query: `
   query {
     Product(id: "${id}"){
       name
@@ -16,16 +16,17 @@ const fetcher = (id: string): AxiosPromise<ProductFetchResponse> => {
       image_url
     }
   }
-  ` })
+  `,
+  })
 }
 
-export function useProduct(id: string){
-    const { data }  = useQuery({
-        queryFn: () => fetcher(id),
-        queryKey: ['product', id]
-    });
-
-    return {
-        data: data?.data.data.Product
-    }
+export function useProduct(id: string) {
+  const { data } = useQuery({
+    queryFn: () => fetcher(id),
+    queryKey: ['product', id],
+  })
+  const response = data?.data.data.Product
+  return {
+    data: response,
+  }
 }

@@ -1,15 +1,15 @@
-import { FilterType } from "@/context/filter-context";
+import { FilterType } from '@/context/filter-context'
+import { Products, ProductsApi } from '@/types/useProducts'
 
 export function graphiQlQuerys(
-    filter: FilterType, 
-    sortOrder: string,
-    sortField:string,
-    page:number
-    ) {
+  filter: FilterType,
+  sortOrder: string,
+  sortField: string,
+  page: number,
+) {
   let query = `
     query {
-      allProducts(`;
-  
+      allProducts(`
 
   if (filter === FilterType.all) {
     query += `
@@ -25,7 +25,7 @@ export function graphiQlQuerys(
         image_url
         category
       }
-    }`;
+    }`
   } else {
     query += `
         filter: { category: "${filter}" }
@@ -41,14 +41,14 @@ export function graphiQlQuerys(
         image_url
         category
       }
-    }`;
+    }`
   }
 
-  return query;
+  return query
 }
 
-export function queryProductById(id:string):string {
-    return `
+export function queryProductById(id: string): string {
+  return `
   query {
     Product(id: "${id}"){
       name
@@ -58,5 +58,17 @@ export function queryProductById(id:string):string {
       image_url
     }
   }
-  ` 
+  `
+}
+
+export function mapApiProductsToInternal(
+  apiProducts: ProductsApi[],
+): Products[] {
+  return apiProducts.map((apiProduct) => ({
+    category: apiProduct.category,
+    id: apiProduct.id,
+    imageUrl: apiProduct.image_url,
+    name: apiProduct.name,
+    priceInCents: apiProduct.price_in_cents,
+  }))
 }
