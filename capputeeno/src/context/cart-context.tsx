@@ -4,7 +4,6 @@ import React, {
   useState,
   ChangeEvent,
   ReactNode,
-  useEffect,
 } from 'react'
 import { ProductInCart } from '@/types/use-product'
 import { useLocalStorage } from '@/hooks/useLocalStorage'

@@ -1,19 +1,8 @@
 'use client'
-import CartList from '@/components/cart-list'
-import CartResult from '@/components/cart-result'
+import CartList from '@/components/cart/cart-list/cart-list'
+import CartResult from '@/components/cart/cart-result'
 import { useLocalStorage } from '@/hooks/useLocalStorage'
-import { ProductInCart } from '@/types/use-product'
-import { styled } from 'styled-components'
-
-const Container = styled.div`
-  width: 100%;
-  min-height: 60vh;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 70px 0;
-  gap: 40px;
-`
+import { Container } from './styled'
 
 export default function CartPage() {
   return (
