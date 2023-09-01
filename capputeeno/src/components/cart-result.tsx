@@ -1,5 +1,10 @@
 'use client'
 
+import { useCart } from '@/context/cart-context'
+import { useLocalStorage } from '@/hooks/useLocalStorage'
+import { calculateTotal } from '@/utils/calculo-total'
+import { formatPrice } from '@/utils/format-price'
+import { key } from '@/utils/key-local-storage'
 import { styled } from 'styled-components'
 
 const Container = styled.div`
@@ -57,6 +62,8 @@ const ButtonFinishOder = styled.button`
   justify-content: center;
   flex-shrink: 0;
   margin-bottom: auto;
+  background-color: green;
+  border: none;
   span {
     color: var(--shapes-light-background, #f5f5fa);
     text-align: center;
@@ -82,20 +89,21 @@ const TagSpanFooter = styled.span`
   width: 18.75rem;
 `
 export default function CartResult() {
+  const { cartItems, cartLength } = useCart()
   return (
     <Container>
       <Title>Resumo</Title>
       <TagDiv>
         <TagSpan>Subtotal de produtos</TagSpan>
-        <TagSpan>R$ 161,00</TagSpan>
+        <TagSpan>{formatPrice(calculateTotal(cartItems))}</TagSpan>
       </TagDiv>
       <TagDiv>
         <TagSpan>Entrega</TagSpan>
-        <TagSpan>R$ 40,00</TagSpan>
+        <TagSpan>{formatPrice(calculateTotal(cartItems) + 4000)}</TagSpan>
       </TagDiv>
       <TagDiv>
         <TagValue>total</TagValue>
-        <TagValue>$RS 201,00</TagValue>
+        <TagValue>{formatPrice(calculateTotal(cartItems) + 4000)}</TagValue>
       </TagDiv>
       <ButtonFinishOder>
         <span>finalizar a compra</span>

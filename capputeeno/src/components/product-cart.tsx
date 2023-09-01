@@ -1,5 +1,8 @@
+/* eslint-disable camelcase */
+import { useCart } from '@/context/cart-context'
 import { formatPrice } from '@/utils/format-price'
 import { Trash } from '@phosphor-icons/react'
+import { ChangeEvent } from 'react'
 import { styled } from 'styled-components'
 
 const ContainerItem = styled.li`
@@ -79,32 +82,58 @@ const TagSelect = styled.select`
   height: 40px;
   flex-shrink: 0;
 `
-export default function ProductCart() {
+
+interface ProductCartprops {
+  name: string
+  price_in_cents: number
+  id: string
+  image_url: string
+  description?: string
+  category?: string
+  quantity: number
+  handleUpdateQuantity(id: string, quantity: number): void
+}
+export default function ProductCart({
+  id,
+  image_url,
+  name,
+  price_in_cents,
+  quantity,
+  description,
+}: ProductCartprops) {
+  const { handleChange, removeFromCart } = useCart()
+
   return (
     <ContainerItem>
-      <TagImgItem src="" alt="" />
+      <TagImgItem src={image_url} />
       <ContainerTag>
         <TagContainerNameItem>
-          <TagNameProduct>Caneca de cerâmica rústica</TagNameProduct>
-          <Trash />
+          <TagNameProduct>{name}</TagNameProduct>
+          <button
+            onClick={() => {
+              removeFromCart(id)
+            }}
+          >
+            <Trash />
+          </button>
         </TagContainerNameItem>
         <DescriptionContaner>
-          <TagDescriptionProd>
-            Aqui vem um texto descritivo do produto, esta caixa de texto servirá
-            apenas de exemplo para que simule algum texto que venha a ser
-            inserido nesse campo, descrevendo tal produto.
-          </TagDescriptionProd>
+          <TagDescriptionProd>{description}</TagDescriptionProd>
         </DescriptionContaner>
         <ContainerResult>
-          <TagSelect name="quantity">
-            <option value="valor1" selected>
-              Valor 1
-            </option>
-            <option value="valor2">Valor 2</option>
-            <option value="valor3">Valor 3</option>
+          <TagSelect
+            name="quantity"
+            value={quantity}
+            onChange={(event) => handleChange(event, id)}
+          >
+            <option value={1}>1</option>
+            <option value={2}>2</option>
+            <option value={3}>3</option>
+            <option value={4}>4</option>
+            <option value={5}>5</option>
           </TagSelect>
 
-          <TagPriceValue>{formatPrice(89)}</TagPriceValue>
+          <TagPriceValue>{formatPrice(price_in_cents)}</TagPriceValue>
         </ContainerResult>
       </ContainerTag>
     </ContainerItem>

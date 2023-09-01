@@ -15,5 +15,24 @@ export const GlobalStyle = createGlobalStyle`
     
   }
 
+  button{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: 1s;
+    background-color: transparent;
+    svg{
+      width: 1.5rem;
+      height: 1.5rem;
+      color: #617480;
+
+    } 
+    &:active{
+      transform: scale(0.9);
+    }
+  }
+
 
 `

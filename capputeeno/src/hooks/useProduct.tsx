@@ -9,6 +9,7 @@ const fetcher = (id: string): AxiosPromise<ProductFetchResponse> => {
     query: `
   query {
     Product(id: "${id}"){
+      id
       name
       description
       category
@@ -21,12 +22,13 @@ const fetcher = (id: string): AxiosPromise<ProductFetchResponse> => {
 }
 
 export function useProduct(id: string) {
-  const { data } = useQuery({
+  const { data, isLoading } = useQuery({
     queryFn: () => fetcher(id),
     queryKey: ['product', id],
   })
   const response = data?.data.data.Product
   return {
     data: response,
+    isLoading,
   }
 }

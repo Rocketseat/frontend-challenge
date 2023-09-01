@@ -2,7 +2,8 @@ import Header from '@/components/header'
 import StyledComponentsRegistry from '@/lib/registry'
 import { DefaultProvider } from '@/utils/default-provider'
 import type { Metadata } from 'next'
-import { Inter, Saira_Stencil_One } from 'next/font/google'
+// eslint-disable-next-line camelcase
+import { Saira_Stencil_One } from 'next/font/google'
 
 const saira = Saira_Stencil_One({
   weight: ['400'],
@@ -24,8 +25,8 @@ export default function RootLayout({
     <html lang="en">
       <DefaultProvider>
         <body className={saira.className}>
-            <Header/>
-            {children}
+          <Header />
+          {children}
         </body>
       </DefaultProvider>
     </html>

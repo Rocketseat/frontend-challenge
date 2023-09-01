@@ -1,6 +1,8 @@
 'use client'
 import CartList from '@/components/cart-list'
 import CartResult from '@/components/cart-result'
+import { useLocalStorage } from '@/hooks/useLocalStorage'
+import { ProductInCart } from '@/types/use-product'
 import { styled } from 'styled-components'
 
 const Container = styled.div`
