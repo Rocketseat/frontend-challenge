@@ -4,6 +4,7 @@ import Link from "next/link";
 import styled from "styled-components";
 import { InputPrimaryWithSeach } from "@/components/input-primary";
 import { Saira_Stencil_One } from "next/font/google";
+import { CartIconWithStore } from "@/components/cart-icon";
 
 const sairaStencil = Saira_Stencil_One({
   subsets: ["latin"],
@@ -15,15 +16,22 @@ const ContanierHeader = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 20px 160px;
+
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+  }
 `;
 
 const Logo = styled(Link)`
-  color: var(--color-logo);
   font-size: 40px;
-  line-height: 60px;
+  line-height: 150%;
   letter-spacing: 0em;
   cursor: pointer;
   text-decoration: none;
+  color: var(--color-logo);
 `;
 
 export default function Header() {
@@ -34,6 +42,7 @@ export default function Header() {
       </Logo>
       <div>
         <InputPrimaryWithSeach placeholder="Procurando por algo específico?" />
+        <CartIconWithStore />
       </div>
     </ContanierHeader>
   );
