@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/patterns/header";
-import { Saira_Stencil_One } from "next/font/google";
+import { Saira } from "next/font/google";
 import StyledComponentsRegistry from "@/lib/registry";
 
-const saira = Saira_Stencil_One({ subsets: ["latin"], weight: ["400"] });
+const saira = Saira({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",

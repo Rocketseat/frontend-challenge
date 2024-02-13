@@ -2,9 +2,13 @@
 
 import Link from "next/link";
 import styled from "styled-components";
+import { InputPrimaryWithSeach } from "@/components/input-primary";
 import { Saira_Stencil_One } from "next/font/google";
 
-const saira = Saira_Stencil_One({ subsets: ["latin"], weight: ["400"] });
+const sairaStencil = Saira_Stencil_One({
+  subsets: ["latin"],
+  weight: ["400"],
+});
 
 const ContanierHeader = styled.header`
   display: flex;
@@ -25,9 +29,12 @@ const Logo = styled(Link)`
 export default function Header() {
   return (
     <ContanierHeader>
-      <Logo href="/" className={saira.className}>
+      <Logo href="/" className={sairaStencil.className}>
         capputeeno
       </Logo>
+      <div>
+        <InputPrimaryWithSeach placeholder="Procurando por algo específico?" />
+      </div>
     </ContanierHeader>
   );
 }

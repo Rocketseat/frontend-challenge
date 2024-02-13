@@ -1,5 +1,7 @@
 :root{
-  --color-logo:#5D5D6D
+  --bg-secondary:#F3F5F6;
+  --color-logo:#5D5D6D;
+  --text-dark:#737380
 }
 
 * {
