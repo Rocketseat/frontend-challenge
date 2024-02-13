@@ -1,8 +1,9 @@
-:root{
-  --bg-secondary:#F3F5F6;
-  --text-dark:#737380;
-  --color-logo:#5D5D6D;
-  --color-delete:#DE3838;
+:root {
+  --bg-secondary: #f3f5f6;
+  --text-dark: #737380;
+  --color-logo: #5d5d6d;
+  --color-delete: #de3838;
+  --color-orange-low: #ffa585;
 }
 
 * {
@@ -16,5 +17,3 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
 }
-
-

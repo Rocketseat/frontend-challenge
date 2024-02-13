@@ -1,8 +1,10 @@
-import styles from "./page.module.css";
+"use client";
+import NavBar from "../patterns/nav-bar";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-    </main>
+    <div>
+      <NavBar />
+    </div>
   );
 }
