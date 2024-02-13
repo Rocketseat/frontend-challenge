@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/patterns/header";
+import { Saira_Stencil_One } from "next/font/google";
+import StyledComponentsRegistry from "@/lib/registry";
+
+const saira = Saira_Stencil_One({ subsets: ["latin"], weight: ["400"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,9 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        <Header />
-        {children}
+      <body className={saira.className}>
+        <StyledComponentsRegistry>
+          <Header />
+          {children}
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
