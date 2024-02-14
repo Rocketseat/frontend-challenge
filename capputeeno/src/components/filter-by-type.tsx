@@ -28,7 +28,9 @@ const Item = styled.li<FilterItemsProps>`
 export default function FilterByType() {
   const { type, setType } = useFilter();
 
-  const handleChangeType = (value: FilterTypes) => {};
+  const handleChangeType = (value: FilterTypes) => {
+    setType(value);
+  };
 
   return (
     <ListContanier>

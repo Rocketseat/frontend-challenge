@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/patterns/header";
 import { Saira } from "next/font/google";
 import StyledComponentsRegistry from "@/lib/registry";
+import { DefaultProviders } from "@/patterns/default-providers";
 
 const saira = Saira({
   subsets: ["latin"],
@@ -23,8 +24,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={saira.className}>
         <StyledComponentsRegistry>
-          <Header />
-          {children}
+          <DefaultProviders>
+            <Header />
+            {children}
+          </DefaultProviders>
         </StyledComponentsRegistry>
       </body>
     </html>

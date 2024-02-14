@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import ArrowDownIcon from "./icons/arrow-down";
 import { FilterOrdTypes } from "@/types/filter-enum";
+import useFilter from "@/hook/useFilter";
 
 const FilterContanier = styled.div`
   position: relative;
@@ -46,12 +47,16 @@ const BoxItems = styled.ul`
 
 export default function FilterByOrd() {
   const [isActive, setIsActive] = useState(false);
+  const { ord, setOrd } = useFilter();
 
-  const handleUpdate = (value: FilterOrdTypes) => {};
+  const handleUpdate = (value: FilterOrdTypes) => {
+    setOrd(value);
+    setIsActive(false);
+  };
 
   return (
     <FilterContanier>
-      <SelectContanier onClick={() => setIsActive(true)}>
+      <SelectContanier onClick={() => setIsActive((prev) => !prev)}>
         <p>Organizar por</p>
         <ArrowDownIcon />
       </SelectContanier>
