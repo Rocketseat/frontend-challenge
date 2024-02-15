@@ -10,13 +10,13 @@ const request = {
       name
       price_in_cents
       image_url
+      id
     }
   }
 `,
 };
 
 const fetchFn = (): AxiosPromise<ProductsResponse> => {
-  console.log("fecth");
   return axios.post(apiUrl, request);
 };
 

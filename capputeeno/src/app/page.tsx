@@ -6,7 +6,7 @@ import ProductsList from "@/patterns/products-list";
 const PageContanier = styled.main`
   background-color: var(--bg-default);
   padding: 0 160px;
-  height: 100vh;
+  height: 100%;
 `;
 
 export default function Home() {
