@@ -1,3 +1,4 @@
+import { formatPrice } from "@/commons/format-price";
 import Product from "@/types/product";
 import Image from "next/image";
 import styled from "styled-components";
@@ -48,7 +49,7 @@ export default function ProductCard(props: Product) {
       </ImageNext>
       <h3>{props.name}</h3>
       <Divisor />
-      <p>{props.price_in_cents}</p>
+      <p>{formatPrice(props.price_in_cents)}</p>
     </ProductCardContanier>
   );
 }

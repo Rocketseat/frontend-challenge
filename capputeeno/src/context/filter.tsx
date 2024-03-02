@@ -12,7 +12,7 @@ export const FilterContext = createContext({
 });
 
 export function FilterContextProvider({ children }: ChildrenProps) {
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(1);
   const [type, setType] = useState(FilterTypes.ALL);
   const [ord, setOrd] = useState(FilterOrdTypes.POPULARITY);
 

@@ -47,7 +47,7 @@ const BoxItems = styled.ul`
 
 export default function FilterByOrd() {
   const [isActive, setIsActive] = useState(false);
-  const { ord, setOrd } = useFilter();
+  const { setOrd } = useFilter();
 
   const handleUpdate = (value: FilterOrdTypes) => {
     setOrd(value);

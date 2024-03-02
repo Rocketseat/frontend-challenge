@@ -1,29 +1,21 @@
 import ProductsResponse from "@/types/products-response";
 import { useQuery } from "@tanstack/react-query";
 import axios, { AxiosPromise } from "axios";
+import useFilter from "./useFilter";
+import mountQuery from "@/commons/mount-query";
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL as string;
-const request = {
-  query: `
-  query{
-    allProducts{
-      name
-      price_in_cents
-      image_url
-      id
-    }
-  }
-`,
-};
 
-const fetchFn = (): AxiosPromise<ProductsResponse> => {
-  return axios.post(apiUrl, request);
+const fetchFn = (query: string): AxiosPromise<ProductsResponse> => {
+  return axios.post(apiUrl, { query });
 };
 
 export default function useProductsList() {
-  const { data, error } = useQuery({
-    queryKey: ["products"],
-    queryFn: fetchFn,
+  const { type, ord } = useFilter();
+  const query = mountQuery({ type, ord });
+  const { data } = useQuery({
+    queryKey: ["products", type, ord],
+    queryFn: () => fetchFn(query),
   });
 
   return { data: data?.data.data.allProducts };
