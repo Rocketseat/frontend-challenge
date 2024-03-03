@@ -1,0 +1,14 @@
+{
+  "name": "challenge-front-end-rocketseat",
+  "version": "1.0.0",
+  "description": "![image](https://user-images.githubusercontent.com/40845824/121069742-3accdb00-c7a4-11eb-87d0-3dc47e433762.png)",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"cd api && yarn start\" \"cd capputeeno && npm run dev\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
