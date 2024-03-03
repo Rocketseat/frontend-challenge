@@ -9,12 +9,15 @@ export const FilterContext = createContext({
   setOrd: (value: FilterOrdTypes) => {},
   page: 0,
   setPage: (value: number) => {},
+  skip: 0,
 });
 
 export function FilterContextProvider({ children }: ChildrenProps) {
   const [page, setPage] = useState(1);
   const [type, setType] = useState(FilterTypes.ALL);
   const [ord, setOrd] = useState(FilterOrdTypes.POPULARITY);
+
+  const skip = 12;
 
   return (
     <FilterContext.Provider
@@ -25,6 +28,7 @@ export function FilterContextProvider({ children }: ChildrenProps) {
         setPage,
         ord,
         setOrd,
+        skip,
       }}
     >
       {children}
