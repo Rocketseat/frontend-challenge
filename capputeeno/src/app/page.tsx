@@ -3,11 +3,7 @@ import styled from "styled-components";
 import NavBar from "../patterns/nav-bar";
 import ProductsList from "@/patterns/products-list";
 import Pagination from "@/components/pagination";
-
-const PageContanier = styled.main`
-  background-color: var(--bg-default);
-  padding: 0 160px;
-`;
+import { PageContanier } from "@/components/page-contanier";
 
 const FooterContanier = styled.footer`
   display: flex;

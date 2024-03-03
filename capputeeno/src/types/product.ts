@@ -4,3 +4,8 @@ export default interface Product {
   image_url: string;
   id: string;
 }
+
+export interface ProductDetails extends Product {
+  description: string;
+  category: string;
+}

@@ -22,7 +22,7 @@ export function CartIconWithStore() {
 
   return (
     <CartContanier>
-      <CartIcon />
+      <CartIcon color="#737380" />
       {!!storage.length && <CartCount>{storage.length}</CartCount>}
     </CartContanier>
   );
