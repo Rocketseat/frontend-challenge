@@ -18,6 +18,7 @@ export default function useProductsList() {
   const { data } = useQuery({
     queryKey: ["products", type, ord, page],
     queryFn: () => fetchFn(query),
+    staleTime: 1000 * 60 * 1,
   });
 
   return { data: data?.data.data.allProducts };

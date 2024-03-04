@@ -48,6 +48,7 @@ export default function ProductCard(props: Product) {
           src={props.image_url}
           alt={props.name}
           fill
+          priority
           sizes="max-inline-size: 100%"
         />
       </ImageNext>
